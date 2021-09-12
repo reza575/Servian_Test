@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="photoshow"
+            type="com.moeiny.reza.servian_test.data.model.uimodel.ShowPhotoModel"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rel_showFragment_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:focusableInTouchMode="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rl_showfragment_albumid"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="@dimen/view_margin"
+    android:layout_marginBottom="@dimen/view_margin"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:id="@+id/txt_showfragment_albumid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Album Id : "
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_showfragment_albumidvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{photoshow.albumId}"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintStart_toEndOf="@id/txt_showfragment_albumid"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rl_showfragment_photoid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/view_margin"
+        android:layout_marginBottom="@dimen/view_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_showfragment_albumid">
+
+        <TextView
+            android:id="@+id/txt_showfragment_photoid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Photo Id : "
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/txt_showfragment_photoidvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{photoshow.id}"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            app:layout_constraintStart_toEndOf="@id/txt_showfragment_photoid"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/img_showFragment_photo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:layout_margin="@dimen/view_margin"
+        app:imageUrl="@{photoshow.url}"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_showfragment_photoid"/>
+
+    <TextView
+        android:id="@+id/txt_showFragment_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/view_margin"
+        android:background="@color/blue"
+        android:gravity="center"
+        android:padding="@dimen/view_margin"
+        android:text="@{photoshow.title}"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_showFragment_photo"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>

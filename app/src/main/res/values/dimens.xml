@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_margin">10dp</dimen>
+    <dimen name="Top_margin">20dp</dimen>
+    <dimen name="image_height">350dp</dimen>
+    <dimen name="txtbutton_height">50dp</dimen>
+    <dimen name="txtbutton_hor_margin">20dp</dimen>
+    <dimen name="txtbutton_Top_margin">60dp</dimen>
+    <dimen name="recycler_item_margin">4dp</dimen>
+    <dimen name="banner_height">300dp</dimen>
+    <dimen name="photo_size">120dp</dimen>
+    <dimen name="hor_margin">8dp</dimen>
+    <dimen name="progressbar_height">50dp</dimen>
+    <dimen name="recycler_icon_size">110dp</dimen>
+
+</resources>

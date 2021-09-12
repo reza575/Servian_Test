@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="photoshow"
+            type="com.moeiny.reza.servian_test.data.model.uimodel.ShowPhotoModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rel_photoFragment_parent"
+        android:background="@color/white"
+        android:focusableInTouchMode="true"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rl_fragmentphoto_albumid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="@dimen/view_margin"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_fragmentphoto_albumid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="Album ID : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_fragmentphoto_albumidvalue"
+                app:layout_constraintStart_toEndOf="@id/txt_fragmentphoto_albumid"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="@{photoshow.albumId}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/photoloadingPanel"
+            android:visibility="invisible"
+            android:layout_gravity="center"
+            android:layout_width="@dimen/progressbar_height"
+            android:layout_height="@dimen/progressbar_height"
+            android:indeterminate="true"
+            app:layout_constraintTop_toBottomOf="@id/rl_fragmentphoto_albumid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photo_recyclerview"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rl_fragmentphoto_albumid"
+            android:layout_width="match_parent"
+            android:paddingBottom="@dimen/txtbutton_Top_margin"
+            android:layout_height="wrap_content">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
